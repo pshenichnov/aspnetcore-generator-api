@@ -14,7 +14,7 @@ RUN dotnet restore tests/tests.csproj
 COPY . .
 
 # test
-RUN dotnet test tests/tests.csproj
+RUN dotnet test tests/tests.csproj --logger:trx
 
 # publish
 RUN dotnet publish api/api.csproj -o /publish
